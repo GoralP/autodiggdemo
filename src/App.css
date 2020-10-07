@@ -1,0 +1,73 @@
+.App {
+  text-align: center;
+}
+
+.nav-text {
+  font-size: 0.8rem;
+}
+
+.navbar-menu-item {
+  color: white !important;
+}
+
+.header-master {
+  background: rgb(44, 62, 72);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.main-banner {
+  background-image: url(./images/banner-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 90px 0;
+  font-family: Montserrat, sans-serif;
+}
+
+.main-banner-left-side {
+  margin-left: 2.5rem;
+}
+
+.local-dealer {
+  color: white;
+}
+
+.local-dealer-subtitle {
+  color: #ff700a;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.main-banner-right-side {
+  background-color: rgb(53, 68, 78);
+  margin-left: 6rem;
+  padding: 2rem 2rem !important;
+}
+
+.mandatory-field {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.seach-form-input {
+  padding: 0 15px;
+  height: 50px !important;
+  line-height: 50px;
+  width: 100%;
+  margin-bottom: 2.8rem;
+  background: #31404a !important;
+  font-size: 13px;
+  color: #fff !important;
+  border: none !important;
+
+  cursor: pointer;
+}
+
+::placeholder {
+  color: white !important;
+  opacity: 1;
+}
