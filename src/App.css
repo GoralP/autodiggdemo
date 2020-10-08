@@ -13,14 +13,15 @@
 
 .navbar-menu-item {
   color: white !important;
+  font-family: "Montserrat", sans-serif;
 }
 
 .header-master {
   background: transparent;
-  padding: 10px;
+  padding: 0px 8px !important;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 10;
 }
 
 /************************* Navigation bar end ****************************/
@@ -31,8 +32,15 @@
   background-image: url(./images/banner-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+}
 
-  font-family: Montserrat, sans-serif;
+.banner-container {
+  padding-top: 9.5rem;
+  padding-bottom: 7rem;
+}
+
+.main-banner-left-side {
+  margin-left: 1.2rem;
 }
 
 .local-dealer {
@@ -41,28 +49,34 @@
   font-weight: 800;
   color: #fff;
   line-height: 50px;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.3px;
   margin-bottom: 10px;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .local-dealer-subtitle {
   color: #ff700a;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.local-dealer-img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
 }
 
 .main-banner-right-side {
-  background-color: #35444e;
-  margin-left: 8rem;
-  padding: 2rem 2rem !important;
+  margin-left: 6rem;
 }
 
-.mandatory-field {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  color: #fff;
+.right-side-box {
+  background-color: #35444e;
+
+  padding: 40px !important;
+  margin: 0px 0px !important;
 }
 
 .seach-form-input {
@@ -73,18 +87,378 @@
   margin-bottom: 2.8rem;
   background: #31404a !important;
   font-size: 13px;
-  color: #fff !important;
+  color: #ffffff !important;
   border: none !important;
   cursor: pointer;
 }
 
+.select-car {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 45px;
+}
+
+.mandatory-field {
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+  color: #ffffff;
+  font-size: 15px;
+}
+
 ::placeholder {
-  color: white !important;
+  color: #ffffff !important;
   opacity: 1;
+  font-size: 15px;
+}
+
+.get-started-button {
+  background-color: #ff700a !important;
+  color: #fff;
+  display: block;
+  width: 100%;
+  border-radius: 0 !important;
+  border: none !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  padding-bottom: 0.7rem !important;
+  padding-top: 0.7rem !important;
+}
+
+/************************* Container banner end ****************************/
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .main-banner-left-side {
+    margin-left: 0rem;
+  }
+  .main-banner-right-side {
+    margin-left: 0rem;
+    margin-top: 3rem;
+  }
+}
+
+/************************** How does it work start ************************/
+.work-container {
+  background-color: rgb(248, 248, 248);
+}
+
+.how-does-it-work {
+  padding: 4rem 0px;
+}
+
+.home-title {
+  color: #1e1e1e;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin: 0;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: capitalize;
+}
+
+.pad-normal {
+  padding: 1rem 7rem;
+}
+
+.how-does-it-work .panels {
+  margin-top: 40px;
+}
+
+.panel-box-bg {
+  background-color: white;
+  padding: 15px;
+}
+
+.panel-box {
+  margin: 0.9rem 0;
+}
+
+.work-content-title {
+  font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #1e1e1e;
+  margin-bottom: 0.6rem;
+}
+
+.work-content {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .pad-normal {
+    padding: 1rem 1.2rem;
+  }
+}
+
+/************************** How does it work end ************************/
+
+/************************** Competitors start ************************/
+
+.competitors-container {
+  background-color: white;
+  margin-top: 4.5rem;
+  text-align: center;
+}
+
+.competitors-section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 80px;
+}
+
+.competitors-section-heading h2 {
+  line-height: 32px;
+  font-size: 34px;
+  font-weight: 700;
+  color: #1e1e1e;
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 15px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.competitors-section-heading h2:after {
+  width: 45px;
+  height: 3px;
+  background-color: #ff700a;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  content: "";
+}
+
+.competitors-section-heading span {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #7a7a7a;
+  font-family: "Roboto", sans-serif;
+}
+
+.differentiates-box {
+  padding: 0.5rem 8rem;
+}
+
+.differentiates-icon {
+  width: 90px;
+  height: 90px;
+  display: inline-block;
+  text-align: center;
+  line-height: 90px;
+}
+
+.competitors-container h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.competitors-container ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.competitors-container ul li {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #4a4a4a;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .differentiates-box {
+    padding: 0.5rem 0rem;
+  }
+}
+
+/************************** Competitors end ************************/
+
+/************************** login-connect ************************/
+
+.login-connect {
+  max-width: 100%;
+}
+.login-connect .dealer {
+  background: url(./images/dealer-bg.jpg) no-repeat 50%;
+  padding: 2rem 0;
+}
+
+.login-connect .form-wrapper {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.login-connect .form-wrapper .title {
+  font-size: 3.4em;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  color: white;
 }
 
 .form-layout {
   margin: 0 auto;
   max-width: 500px;
-  width: 90%;
+  width: 50%;
+  padding: 1rem 1rem;
+  padding-bottom: 0.8rem;
+  background-color: transparent;
 }
+
+.form-login-input {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin-bottom: 2rem;
+  color: white !important;
+  border-bottom: 2px solid rgb(255, 255, 255, 0.3) !important;
+}
+
+.dealer-login-button {
+  background-color: rgb(255, 112, 10) !important;
+  color: #fff;
+  display: block;
+  width: 100%;
+  border-radius: 0 !important;
+  border: none !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  padding-bottom: 0.7rem !important;
+  padding-top: 0.7rem !important;
+}
+
+.separator {
+  margin-bottom: 25px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.register-now {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.forgot-password {
+  color: white;
+  text-decoration: underline;
+  font-size: 1.1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.buyer {
+  background: url(./images/buyers-bg.jpg) no-repeat 50%;
+  padding: 2rem 0;
+}
+
+.form-register-input {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  margin-bottom: 2rem;
+  border: 3px solid rgb(201, 200, 197) !important;
+  color: white !important;
+}
+
+/************************** login-connect end ************************/
+
+/************************** contact us start ************************/
+
+.contact-us-bg {
+  background-color: rgb(247, 247, 247);
+  padding: 4rem 0;
+}
+
+.contact-us-box {
+  padding: 0 6rem;
+}
+
+.contact-form {
+  margin-top: 4rem;
+}
+
+.contact-form-input {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  margin-bottom: 2rem;
+  border: none !important;
+  border-bottom: 2.2px solid rgb(255, 112, 10) !important;
+  color: white !important;
+}
+
+.contact-input-teaxtarea {
+  height: 10rem !important;
+  margin-top: 2rem;
+}
+
+.contact-form-input::placeholder {
+  color: gray !important;
+  opacity: 1;
+  font-size: 1.1rem;
+}
+
+.send-message-button {
+  background-color: rgb(255, 112, 10) !important;
+  color: #fff;
+  border-radius: 0 !important;
+  border: none !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  padding-bottom: 0.7rem !important;
+  padding-top: 0.7rem !important;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .contact-us-box {
+    padding: 0 1rem;
+  }
+  .contact-form-input {
+    border-bottom: 1px solid rgb(255, 112, 10) !important;
+  }
+}
+
+/************************** contact us end ************************/
+
+/************************** Footer start**************************/
+
+.footer-bg {
+  background-color: rgb(35, 35, 35);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.footer-title {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 1.2rem !important;
+  font-weight: 600;
+}
+
+.footer-text {
+  font-family: "Roboto", sans-serif;
+}
+
+.footer-copy-right {
+  text-decoration: underline;
+}
+
+/************************** Footer end**************************/
