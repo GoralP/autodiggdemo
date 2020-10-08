@@ -8,6 +8,7 @@ import {
   NavItem,
   NavLink,
   NavbarText,
+  Button,
 } from "reactstrap";
 import logo from "../images/logo_autodigg.png";
 
@@ -39,6 +40,9 @@ const Navigation = (props) => {
         </NavbarText>
         <NavbarText>
           <NavLink className="navbar-menu-item">DEALERS</NavLink>
+        </NavbarText>
+        <NavbarText>
+          <Button className="signin-register">SIGN IN / REGISTER</Button>
         </NavbarText>
       </Collapse>
     </Navbar>

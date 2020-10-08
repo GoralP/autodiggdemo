@@ -5,7 +5,10 @@ import { Button, Form, FormGroup, Input, Row, Col } from "reactstrap";
 import { useForm, Controller } from "react-hook-form";
 
 const contactSchema = yup.object().shape({
-  newCar: yup.string().required("Title is a required field."),
+  name: yup.string().required("Name is a required field."),
+  email: yup.string().required("E-mail address is a required field."),
+  phone: yup.string().required("Phone is a required field."),
+  message: yup.string().required("Message is a required field."),
 });
 
 const ContactUS = () => {
@@ -14,8 +17,8 @@ const ContactUS = () => {
   });
   return (
     <div>
-      <h1 className="home-title">Contact Us</h1>
-      <Form className="contact-form">
+      <h1 className="home-title text-center">Contact Us</h1>
+      <Form className="contact-form" onSubmit={handleSubmit()}>
         <Row className="contact-us-box">
           <Col sm="4">
             <FormGroup>

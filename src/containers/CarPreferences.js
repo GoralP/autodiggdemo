@@ -1,11 +1,16 @@
 import React from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+import { Button, Form, Input, Row, Col } from "reactstrap";
 import { useForm, Controller } from "react-hook-form";
 
 const carsSchema = yup.object().shape({
-  newCar: yup.string().required("Title is a required field."),
+  car_type: yup.string().required("Car type is a required field."),
+  car_make: yup.string().required("Car make is a required field."),
+  car_model: yup.string().required("Car model is a required field."),
+  credit_score: yup.string().required("Credit score is a required field."),
+  miles: yup.string().required("Miles is a required field."),
+  zip_code: yup.string().required("Zip code is a required field."),
 });
 
 const CarPreferences = () => {
@@ -16,42 +21,36 @@ const CarPreferences = () => {
     <div>
       <h4 className="select-car">Select Car Preferences</h4>
       <p className="mandatory-field">* indicates mandatory field</p>
-      <Form>
+      <Form onSubmit={handleSubmit()}>
         <Row>
           <Col sm="6">
             <Controller
               as={Input}
               control={control}
-              name="newCar"
+              name="car_type"
               type="text"
               placeholder="Car Type*"
-              // defaultValue={
-              //   action === "edit" ? category !== null && category.title : ""
-              // }
               ref={register}
               className="seach-form-input"
-              //   className={errors && errors.newCar ? "is-invalid" : ""}
+              defaultValue=""
             />
-            {errors && errors.newCar && (
-              <span className="text-danger">{errors.newCar.message}</span>
+            {errors && errors.car_type && (
+              <span className="text-white">{errors.car_type.message}</span>
             )}
           </Col>
           <Col sm="6">
             <Controller
               as={Input}
               control={control}
-              name="newCar"
+              name="car_make"
               type="text"
               placeholder="Car Make*"
-              // defaultValue={
-              //   action === "edit" ? category !== null && category.title : ""
-              // }
               ref={register}
               className="seach-form-input"
-              //   className={errors && errors.newCar ? "is-invalid" : ""}
+              defaultValue=""
             />
-            {errors && errors.newCar && (
-              <span className="text-danger">{errors.newCar.message}</span>
+            {errors && errors.car_make && (
+              <span className="text-white">{errors.car_make.message}</span>
             )}
           </Col>
         </Row>
@@ -61,36 +60,30 @@ const CarPreferences = () => {
             <Controller
               as={Input}
               control={control}
-              name="newCar"
+              name="car_model"
               type="text"
               placeholder="Car Model*"
-              // defaultValue={
-              //   action === "edit" ? category !== null && category.title : ""
-              // }
               ref={register}
               className="seach-form-input"
-              //   className={errors && errors.newCar ? "is-invalid" : ""}
+              defaultValue=""
             />
-            {errors && errors.newCar && (
-              <span className="text-danger">{errors.newCar.message}</span>
+            {errors && errors.car_model && (
+              <span className="text-white">{errors.car_model.message}</span>
             )}
           </Col>
           <Col sm="6">
             <Controller
               as={Input}
               control={control}
-              name="newCar"
+              name="credit_score"
               type="text"
               placeholder="Estimated Credit Score*"
-              // defaultValue={
-              //   action === "edit" ? category !== null && category.title : ""
-              // }
               ref={register}
               className="seach-form-input"
-              //   className={errors && errors.newCar ? "is-invalid" : ""}
+              defaultValue=""
             />
-            {errors && errors.newCar && (
-              <span className="text-danger">{errors.newCar.message}</span>
+            {errors && errors.credit_score && (
+              <span className="text-white">{errors.credit_score.message}</span>
             )}
           </Col>
         </Row>
@@ -100,36 +93,30 @@ const CarPreferences = () => {
             <Controller
               as={Input}
               control={control}
-              name="newCar"
+              name="miles"
               type="text"
               placeholder="50 miles from*"
-              // defaultValue={
-              //   action === "edit" ? category !== null && category.title : ""
-              // }
               ref={register}
               className="seach-form-input"
-              //   className={errors && errors.newCar ? "is-invalid" : ""}
+              defaultValue=""
             />
-            {errors && errors.newCar && (
-              <span className="text-danger">{errors.newCar.message}</span>
+            {errors && errors.miles && (
+              <span className="text-white">{errors.miles.message}</span>
             )}
           </Col>
           <Col sm="6">
             <Controller
               as={Input}
               control={control}
-              name="newCar"
+              name="zip_code"
               type="text"
               placeholder="Zip Code*"
-              // defaultValue={
-              //   action === "edit" ? category !== null && category.title : ""
-              // }
               ref={register}
               className="seach-form-input"
-              //   className={errors && errors.newCar ? "is-invalid" : ""}
+              defaultValue=""
             />
-            {errors && errors.newCar && (
-              <span className="text-danger">{errors.newCar.message}</span>
+            {errors && errors.zip_code && (
+              <span className="text-white">{errors.zip_code.message}</span>
             )}
           </Col>
         </Row>

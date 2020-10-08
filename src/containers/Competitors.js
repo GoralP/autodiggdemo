@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Container } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import privacyIcon from "../images/icon_1.png";
 import sourceIcon from "../images/icon_2.png";
 import personalizedIcon from "../images/icon_3.png";

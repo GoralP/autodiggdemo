@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Row, Col } from "reactstrap";
 import selectIcon from "../images/panels-icon-1.png";
 import informationIcon from "../images/panels-icon-2.png";
 import personalizedIcon from "../images/panels-icon-3.png";
@@ -14,17 +14,17 @@ const Work = () => {
       <Row className="pad-normal">
         <Col sm="12" className="panels">
           <Row>
-            <Col sm="8" className=" panel-box-bg">
+            <Col sm="8" className=" panel-box-bg ">
               <Row>
                 <Col sm="1"></Col>
-                <Col sm="6" className="text-center">
+                <Col sm="5" className="column-reverse">
                   <h4 className="work-content-title">Select Car Preference</h4>
                   <div className="work-content">
                     Provide your car type, make, model and other preferences.
                   </div>
                 </Col>
-                <Col sm="1"></Col>
-                <Col sm="3">
+
+                <Col sm="5" className="work-icon">
                   <img alt="Select car icon" src={selectIcon} />
                 </Col>
               </Row>
@@ -35,12 +35,16 @@ const Work = () => {
             <Col sm="4"></Col>
             <Col sm="8" className=" panel-box-bg panel-box">
               <Row>
-                <Col sm="2"></Col>
-                <Col sm="2">
-                  <img alt="Information icon" src={informationIcon} />
+                <Col sm="1"></Col>
+                <Col sm="3">
+                  <img
+                    alt="Information icon"
+                    className="work-icon"
+                    src={informationIcon}
+                  />
                 </Col>
                 <Col sm="1"></Col>
-                <Col sm="6" className="text-center">
+                <Col sm="6">
                   <h4 className="work-content-title">Information Broadcast</h4>
                   <div className="work-content">
                     Preferences are sent to dealers without sharing your contact
@@ -55,7 +59,7 @@ const Work = () => {
             <Col sm="8" className=" panel-box-bg">
               <Row>
                 <Col sm="1"></Col>
-                <Col sm="6" className="text-center">
+                <Col sm="5" className="column-reverse">
                   <h4 className="work-content-title">Personalized Offer</h4>
                   <div className="work-content">
                     Receive multiple bids from the Dealers.
@@ -63,7 +67,11 @@ const Work = () => {
                 </Col>
                 <Col sm="1"></Col>
                 <Col sm="3">
-                  <img alt="Personalized icon" src={personalizedIcon} />
+                  <img
+                    alt="Personalized icon"
+                    className="work-icon"
+                    src={personalizedIcon}
+                  />
                 </Col>
               </Row>
             </Col>
@@ -73,12 +81,16 @@ const Work = () => {
             <Col sm="4"></Col>
             <Col sm="8" className=" panel-box-bg panel-box">
               <Row>
-                <Col sm="2"></Col>
-                <Col sm="2">
-                  <img alt="Information icon" src={connectIcon} />
+                <Col sm="1"></Col>
+                <Col sm="3">
+                  <img
+                    alt="Information icon"
+                    className="work-icon"
+                    src={connectIcon}
+                  />
                 </Col>
                 <Col sm="1"></Col>
-                <Col sm="6" className="text-center">
+                <Col sm="6">
                   <h4 className="work-content-title">
                     Connect And Communicate
                   </h4>
@@ -94,7 +106,7 @@ const Work = () => {
             <Col sm="8" className=" panel-box-bg">
               <Row>
                 <Col sm="1"></Col>
-                <Col sm="6" className="text-center">
+                <Col sm="5" className="column-reverse">
                   <h4 className="work-content-title">
                     Exchange Contact Infromation
                   </h4>
@@ -104,7 +116,11 @@ const Work = () => {
                 </Col>
                 <Col sm="1"></Col>
                 <Col sm="3">
-                  <img alt="Personalized icon" src={exchangeIcon} />
+                  <img
+                    alt="Personalized icon"
+                    className="work-icon"
+                    src={exchangeIcon}
+                  />
                 </Col>
               </Row>
             </Col>

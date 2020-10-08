@@ -13,11 +13,8 @@ import {
 const Home = () => {
   return (
     <>
+      <Navigation />
       <Container className="main-banner" fluid={true}>
-        <Row>
-          <Navigation />
-        </Row>
-
         <Container>
           <Row className="banner-container">
             <Col sm="5" className="main-banner-left-side">

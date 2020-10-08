@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "reactstrap";
+import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -16,6 +17,11 @@ const Footer = () => {
       </Col>
       <Col sm="4">
         <h5 className="footer-title">Follow Us</h5>
+        <div>
+          <FaFacebookF className="social-media-icon  " />
+          <FaTwitter className="social-media-icon " />
+          <FaInstagram className="social-media-icon" />
+        </div>
       </Col>
       <Col sm="12">
         <p className="footer-text">

@@ -1,11 +1,12 @@
 import React from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Button, Form, FormGroup, Label, Input, Row, Col } from "reactstrap";
+import { Button, Form, FormGroup, Input } from "reactstrap";
 import { useForm, Controller } from "react-hook-form";
 
 const loginSchema = yup.object().shape({
-  newCar: yup.string().required("Title is a required field."),
+  email: yup.string().required("Email is a required field."),
+  password: yup.string().required("Password is a required field."),
 });
 
 const Login = () => {
@@ -15,7 +16,7 @@ const Login = () => {
   return (
     <div className="form-wrapper ">
       <h2 className="title">Dealer</h2>
-      <Form className="form-layout">
+      <Form className="form-layout" onSubmit={handleSubmit()}>
         <FormGroup>
           <Controller
             as={Input}
@@ -28,7 +29,7 @@ const Login = () => {
             className="form-login-input"
           />
           {errors && errors.email && (
-            <span className="text-danger">{errors.email.message}</span>
+            <span className="text-white">{errors.email.message}</span>
           )}
         </FormGroup>
         <FormGroup>
@@ -42,8 +43,8 @@ const Login = () => {
             ref={register}
             className="form-login-input"
           />
-          {errors && errors.email && (
-            <span className="text-danger">{errors.email.message}</span>
+          {errors && errors.password && (
+            <span className="text-white">{errors.password.message}</span>
           )}
         </FormGroup>
         <FormGroup>

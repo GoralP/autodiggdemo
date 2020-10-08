@@ -19,9 +19,24 @@
 .header-master {
   background: transparent;
   padding: 0px 8px !important;
-  position: fixed;
   width: 100%;
   z-index: 10;
+}
+
+.signin-register {
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  border: 1px solid white !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px;
+  padding: 0.6rem 0.8rem !important;
+}
+
+.signin-register:hover {
+  background-color: white !important;
+  color: #ff700a !important;
 }
 
 /************************* Navigation bar end ****************************/
@@ -144,6 +159,7 @@
 /************************** How does it work start ************************/
 .work-container {
   background-color: rgb(248, 248, 248);
+  text-align: center;
 }
 
 .how-does-it-work {
@@ -156,13 +172,12 @@
   font-weight: 900;
   letter-spacing: 3px;
   margin: 0;
-  text-align: center;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   text-transform: capitalize;
 }
 
 .pad-normal {
-  padding: 1rem 7rem;
+  padding: 1.2rem 7rem;
 }
 
 .how-does-it-work .panels {
@@ -194,7 +209,13 @@
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .pad-normal {
-    padding: 1rem 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+  .column-reverse {
+    order: 2;
+  }
+  .work-icon {
+    margin-bottom: 1rem;
   }
 }
 
@@ -289,7 +310,7 @@
 /************************** login-connect ************************/
 
 .login-connect {
-  max-width: 100%;
+  /* max-width: 100%; */
 }
 .login-connect .dealer {
   background: url(./images/dealer-bg.jpg) no-repeat 50%;
@@ -399,9 +420,9 @@
   background-color: transparent !important;
   border-radius: 0 !important;
   margin-bottom: 2rem;
+  color: black !important;
   border: none !important;
   border-bottom: 2.2px solid rgb(255, 112, 10) !important;
-  color: white !important;
 }
 
 .contact-input-teaxtarea {
@@ -455,6 +476,15 @@
 
 .footer-text {
   font-family: "Roboto", sans-serif;
+}
+
+.social-media-icon {
+  border: 1px solid gray;
+  border-radius: 5rem;
+  color: rgb(157, 157, 157);
+  padding: 0.6rem;
+  margin-right: 1rem;
+  font-size: 2.5rem;
 }
 
 .footer-copy-right {
