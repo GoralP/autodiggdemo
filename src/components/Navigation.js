@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Collapse,
   Navbar,
@@ -12,13 +12,41 @@ import {
 } from "reactstrap";
 import logo from "../images/logo_autodigg.png";
 
-const Navigation = (props) => {
+const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const [navBackground, setNavBackground] = useState(false);
+  const [text, setText] = useState(false);
+  const navRef = useRef();
+
+  navRef.current = navBackground;
+  navRef.current = text;
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 50;
+      if (navRef.current !== show) {
+        setNavBackground(show);
+        setText(show);
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Navbar light expand="md" className="nav-text header-master" fixed="top">
+    <Navbar
+      expand="md"
+      className="nav-text header-master"
+      fixed="top"
+      style={{
+        transition: "500ms ease",
+        backgroundColor: navBackground ? "white" : "transparent",
+      }}
+    >
       <NavbarBrand>
         <img className="blog-logo" alt="blog-logo" src={logo} />
       </NavbarBrand>
