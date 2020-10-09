@@ -10,11 +10,12 @@
 .nav-text {
   font-size: 0.8rem;
   color: white !important;
+
   font-family: "Montserrat", sans-serif;
 }
 
 .navbar-menu-item {
-  color: white !important;
+  /* color: white !important; */
   font-family: "Montserrat", sans-serif;
 }
 

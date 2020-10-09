@@ -20,14 +20,29 @@ const Navigation = () => {
   const [navBackground, setNavBackground] = useState(false);
   const [text, setText] = useState(false);
   const navRef = useRef();
+  const navRefe = useRef();
 
   navRef.current = navBackground;
-  navRef.current = text;
+  navRefe.current = text;
+
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 50;
       if (navRef.current !== show) {
         setNavBackground(show);
+        // setText(show);
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 50;
+      if (navRefe.current !== show) {
         setText(show);
       }
     };
@@ -43,9 +58,12 @@ const Navigation = () => {
       className="nav-text header-master"
       fixed="top"
       style={{
-        transition: "500ms ease",
+        transition: "1s ease",
         backgroundColor: navBackground ? "white" : "transparent",
       }}
+      // style={{
+      //   backgroundColor: window.scrollY > 100 ? "white" : "transparent",
+      // }}
     >
       <NavbarBrand>
         <img className="blog-logo" alt="blog-logo" src={logo} />
@@ -53,24 +71,63 @@ const Navigation = () => {
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto">
-          <NavItem>
-            <NavLink className="navbar-menu-item">HOW DOES IT WORK?</NavLink>
+          <NavItem
+            className="navbar-menu-item"
+            style={{
+              transition: "1s ease",
+              color: text ? "black" : "",
+            }}
+          >
+            <NavbarText>HOW DOES IT WORK?</NavbarText>
           </NavItem>
-          <NavItem>
-            <NavLink className="navbar-menu-item">WHY US?</NavLink>
+
+          <NavItem
+            className="navbar-menu-item"
+            style={{
+              transition: "1s ease",
+              color: text ? "black" : "",
+            }}
+          >
+            <NavbarText className="pl-4">WHY US?</NavbarText>
           </NavItem>
-          <NavItem>
-            <NavLink className="navbar-menu-item">CONTACT US?</NavLink>
+          <NavItem
+            className="navbar-menu-item"
+            style={{
+              transition: "1s ease",
+              color: text ? "black" : "",
+            }}
+          >
+            <NavbarText className="pl-4">CONTACT US?</NavbarText>
           </NavItem>
         </Nav>
-        <NavbarText>
-          <NavLink className="navbar-menu-item">BLOG</NavLink>
+        <NavbarText
+          className="navbar-menu-item"
+          style={{
+            transition: "1s ease",
+            color: text ? "black" : "",
+          }}
+        >
+          BLOG
+        </NavbarText>
+        <NavbarText
+          className="navbar-menu-item px-3"
+          style={{
+            transition: "1s ease",
+            color: text ? "black" : "",
+          }}
+        >
+          DEALERS
         </NavbarText>
         <NavbarText>
-          <NavLink className="navbar-menu-item">DEALERS</NavLink>
-        </NavbarText>
-        <NavbarText>
-          <Button className="signin-register">SIGN IN / REGISTER</Button>
+          <Button
+            className="signin-register"
+            style={{
+              transition: "1s ease",
+              color: text ? "orangered" : "",
+            }}
+          >
+            SIGN IN / REGISTER
+          </Button>
         </NavbarText>
       </Collapse>
     </Navbar>
