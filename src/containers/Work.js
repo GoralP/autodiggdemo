@@ -127,6 +127,7 @@ const Work = () => {
           </Row>
         </Col>
       </Row>
+      
       <Row className="competitors-container">
         <Col sm="12">
           <Competitors />

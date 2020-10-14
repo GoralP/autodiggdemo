@@ -6,44 +6,31 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   NavbarText,
   Button,
+  NavLink,
 } from "reactstrap";
 import logo from "../images/logo_autodigg.png";
+import { FaBars } from "react-icons/fa";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const [navBackground, setNavBackground] = useState(false);
-  const [text, setText] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [hideHeader, setHideHeader] = useState(false);
+
   const navRef = useRef();
-  const navRefe = useRef();
-
-  navRef.current = navBackground;
-  navRefe.current = text;
+  navRef.current = hideHeader;
 
   useEffect(() => {
     const handleScroll = () => {
       const show = window.scrollY > 50;
+      const hide = window.scrollY < 50;
       if (navRef.current !== show) {
-        setNavBackground(show);
-        // setText(show);
-      }
-    };
-    document.addEventListener("scroll", handleScroll);
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const show = window.scrollY > 50;
-      if (navRefe.current !== show) {
-        setText(show);
+        setHideHeader(show);
+        setShowHeader(hide);
       }
     };
     document.addEventListener("scroll", handleScroll);
@@ -53,84 +40,83 @@ const Navigation = () => {
   }, []);
 
   return (
-    <Navbar
-      expand="md"
-      className="nav-text header-master"
-      fixed="top"
-      style={{
-        transition: "1s ease",
-        backgroundColor: navBackground ? "white" : "transparent",
-      }}
-      // style={{
-      //   backgroundColor: window.scrollY > 100 ? "white" : "transparent",
-      // }}
-    >
-      <NavbarBrand>
-        <img className="blog-logo" alt="blog-logo" src={logo} />
-      </NavbarBrand>
-      <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <Nav className="mr-auto">
-          <NavItem
-            className="navbar-menu-item"
-            style={{
-              transition: "1s ease",
-              color: text ? "black" : "",
-            }}
-          >
-            <NavbarText>HOW DOES IT WORK?</NavbarText>
-          </NavItem>
+    <>
+      {showHeader && (
+        <Navbar
+          expand="md"
+          className="nav-text header-master bg-blue pad-large "
+          fixed="top"
+        >
+          <NavbarBrand className="column-reverse">
+            <img className="logo" alt="Autodigg-logo" src={logo} />
+          </NavbarBrand>
+          <NavbarToggler onClick={toggle}>
+            <FaBars className="icon-bars" />
+          </NavbarToggler>
 
-          <NavItem
-            className="navbar-menu-item"
-            style={{
-              transition: "1s ease",
-              color: text ? "black" : "",
-            }}
-          >
-            <NavbarText className="pl-4">WHY US?</NavbarText>
-          </NavItem>
-          <NavItem
-            className="navbar-menu-item"
-            style={{
-              transition: "1s ease",
-              color: text ? "black" : "",
-            }}
-          >
-            <NavbarText className="pl-4">CONTACT US?</NavbarText>
-          </NavItem>
-        </Nav>
-        <NavbarText
-          className="navbar-menu-item"
-          style={{
-            transition: "1s ease",
-            color: text ? "black" : "",
-          }}
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="mr-auto">
+              <NavItem>
+                <NavLink className="menu-padding">HOW DOES IT WORK?</NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink className="menu-padding">WHY US?</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="menu-padding">CONTACT US?</NavLink>
+              </NavItem>
+            </Nav>
+            <NavLink className="menu-padding menu-element">BLOG</NavLink>
+            <NavLink className="menu-padding  menu-element">DEALERS</NavLink>
+            <NavbarText className="menu-element">
+              <Button className="signin-register">SIGN IN / REGISTER</Button>
+            </NavbarText>
+          </Collapse>
+        </Navbar>
+      )}
+
+      {hideHeader && (
+        <Navbar
+          expand="md"
+          className="nav-text-hide header-master-hide"
+          fixed="top"
         >
-          BLOG
-        </NavbarText>
-        <NavbarText
-          className="navbar-menu-item px-3"
-          style={{
-            transition: "1s ease",
-            color: text ? "black" : "",
-          }}
-        >
-          DEALERS
-        </NavbarText>
-        <NavbarText>
-          <Button
-            className="signin-register"
-            style={{
-              transition: "1s ease",
-              color: text ? "orangered" : "",
-            }}
-          >
-            SIGN IN / REGISTER
-          </Button>
-        </NavbarText>
-      </Collapse>
-    </Navbar>
+          <NavbarBrand className="column-reverse">
+            <img className="logo" alt="Autodigg-logo" src={logo} />
+          </NavbarBrand>
+          <NavbarToggler onClick={toggle}>
+            <FaBars className="icon-bars" />
+          </NavbarToggler>
+
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="mr-auto">
+              <NavItem>
+                <NavLink className="menu-padding-hide">
+                  HOW DOES IT WORK?
+                </NavLink>
+              </NavItem>
+
+              <NavItem>
+                <NavLink className="menu-padding-hide">WHY US?</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink className="menu-padding-hide">CONTACT US?</NavLink>
+              </NavItem>
+            </Nav>
+            <NavLink className="menu-padding-hide menu-element">BLOG</NavLink>
+            <NavLink className=" menu-padding-hide menu-element">
+              DEALERS
+            </NavLink>
+            <NavbarText className=" menu-element">
+              <Button className="signin-register-hide">
+                SIGN IN / REGISTER
+              </Button>
+            </NavbarText>
+          </Collapse>
+        </Navbar>
+      )}
+    </>
   );
 };
 

@@ -3,6 +3,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Button, Form, FormGroup, Input } from "reactstrap";
 import { useForm, Controller } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { login } from "../redux/actions/AuthActions";
 
 const loginSchema = yup.object().shape({
   email: yup.string().required("Email is a required field."),
@@ -10,13 +13,21 @@ const loginSchema = yup.object().shape({
 });
 
 const Login = () => {
-  const { control, register, handleSubmit, errors } = useForm({
+  const { control, register, handleSubmit, reset, errors } = useForm({
     resolver: yupResolver(loginSchema),
   });
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const onSubmit = (data) => {
+    dispatch(login(data, history));
+    reset(data);
+  };
   return (
     <div className="form-wrapper ">
       <h2 className="title">Dealer</h2>
-      <Form className="form-layout" onSubmit={handleSubmit()}>
+      <Form className="form-layout" onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
           <Controller
             as={Input}
@@ -25,13 +36,14 @@ const Login = () => {
             type="email"
             placeholder="Email address"
             defaultValue=""
-            ref={register}
+            refs={register}
             className="form-login-input"
           />
           {errors && errors.email && (
-            <span className="text-white">{errors.email.message}</span>
+            <span className="text-warning">{errors.email.message}</span>
           )}
         </FormGroup>
+
         <FormGroup>
           <Controller
             as={Input}
@@ -40,13 +52,14 @@ const Login = () => {
             type="password"
             placeholder="password"
             defaultValue=""
-            ref={register}
+            refs={register}
             className="form-login-input"
           />
           {errors && errors.password && (
-            <span className="text-white">{errors.password.message}</span>
+            <span className="text-warning">{errors.password.message}</span>
           )}
         </FormGroup>
+
         <FormGroup>
           <Button className="dealer-login-button" name="submit">
             SIGN IN

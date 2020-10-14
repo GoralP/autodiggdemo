@@ -21,7 +21,7 @@ const Home = () => {
               <LocalDealers />
             </Col>
 
-            <Col sm="5" className="main-banner-right-side">
+            <Col sm="5" md="6" className="main-banner-right-side">
               <Row className=" right-side-box  shadow">
                 <CarPreferences />
               </Row>
@@ -32,7 +32,7 @@ const Home = () => {
       <Container className="work-container how-does-it-work" fluid={true}>
         <Work />
       </Container>
-      <Container fluid={true} className="login-connect text-center">
+      <Container fluid={true} className="text-center">
         <Row>
           <Col sm="6" className="dealer">
             <Login />

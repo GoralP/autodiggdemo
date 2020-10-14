@@ -1,5 +1,5 @@
 import React from "react";
-import autodiggVideo from "../images/autodigg-video-thumb.jpg";
+
 
 const LocalDealers = () => {
   return (
@@ -10,11 +10,14 @@ const LocalDealers = () => {
       <p className="local-dealer-subtitle">
         We NEVER Share Your Contact Information with ANYONE.
       </p>
-      <img
-        alt="See what we're all about"
-        src={autodiggVideo}
-        className="local-dealer-img"
-      ></img>
+      <iframe 
+        id="video"
+        title="autodigg video"
+        frameBorder="0"
+        width="100%"
+        height="250px"
+        src="https://www.youtube.com/embed/SDFUmf8otfc?rel=0&amp;modestbranding=1&amp;autohide=1&amp;showinfo=0&amp;"
+      />
     </div>
   );
 };

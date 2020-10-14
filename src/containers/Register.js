@@ -3,34 +3,47 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { Button, Form, FormGroup, Input } from "reactstrap";
 import { useForm, Controller } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { registration } from "../redux/actions/AuthActions";
 
 const registerSchema = yup.object().shape({
-  username: yup.string().required("Username is a required field."),
+  name: yup.string().required("Username is a required field."),
   email: yup.string().required("Email is a required field."),
   password: yup.string().required("Password is a required field."),
 });
 
 const Register = () => {
-  const { control, register, handleSubmit, errors } = useForm({
+  const { control, register, handleSubmit, reset, errors } = useForm({
     resolver: yupResolver(registerSchema),
   });
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const onSubmit = (data) => {
+    dispatch(registration(data));
+    reset(data);
+    history.push("/");
+  };
+
   return (
     <div className="form-wrapper">
-      <h2 className="title">BUYER</h2>
-      <Form className="form-layout" onSubmit={handleSubmit()}>
+      <h2 className="title">buyer</h2>
+      <Form className="form-layout" onSubmit={handleSubmit(onSubmit)}>
         <FormGroup>
           <Controller
             as={Input}
             control={control}
-            name="username"
+            name="name"
             type="text"
             placeholder="Username"
             defaultValue=""
-            ref={register}
+            refs={register}
             className="form-register-input"
           />
-          {errors && errors.username && (
-            <span className="text-white">{errors.username.message}</span>
+          {errors && errors.name && (
+            <span className="text-warning">{errors.name.message}</span>
           )}
         </FormGroup>
         <FormGroup>
@@ -41,11 +54,11 @@ const Register = () => {
             type="email"
             placeholder="Email address"
             defaultValue=""
-            ref={register}
+            refs={register}
             className="form-register-input"
           />
           {errors && errors.email && (
-            <span className="text-white">{errors.email.message}</span>
+            <span className="text-warning">{errors.email.message}</span>
           )}
         </FormGroup>
         <FormGroup>
@@ -56,11 +69,11 @@ const Register = () => {
             type="password"
             placeholder="password"
             defaultValue=""
-            ref={register}
+            refs={register}
             className="form-register-input"
           />
           {errors && errors.password && (
-            <span className="text-white">{errors.password.message}</span>
+            <span className="text-warning">{errors.password.message}</span>
           )}
         </FormGroup>
         <FormGroup>

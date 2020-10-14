@@ -15,12 +15,18 @@ const Footer = () => {
         <h5 className="footer-title">Contact Us</h5>
         <div className="footer-text">support@autodigg.com</div>
       </Col>
-      <Col sm="4">
+      <Col sm="4" className="">
         <h5 className="footer-title">Follow Us</h5>
         <div>
-          <FaFacebookF className="social-media-icon  " />
-          <FaTwitter className="social-media-icon " />
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+          <FaFacebookF className="social-media-icon" />
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">  
+          <FaTwitter className="social-media-icon mx-3" />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">  
           <FaInstagram className="social-media-icon" />
+        </a>  
         </div>
       </Col>
       <Col sm="12">
